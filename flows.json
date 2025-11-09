@@ -1,0 +1,621 @@
+[
+    {
+        "id": "e739fafb62ee9410",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6d00d2aaffa6094e",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "dc3310a258372331",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "dc640a90942981bb",
+        "type": "ui-page",
+        "name": "Page 1",
+        "ui": "6d00d2aaffa6094e",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "dc3310a258372331",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": 0,
+                "cols": 3
+            },
+            {
+                "name": "Tablet",
+                "px": 576,
+                "cols": 6
+            },
+            {
+                "name": "Small Desktop",
+                "px": 768,
+                "cols": 9
+            },
+            {
+                "name": "Desktop",
+                "px": 1024,
+                "cols": 12
+            }
+        ],
+        "order": 2,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "6b49f25283084ef2",
+        "type": "ui-page",
+        "name": "Challenge",
+        "ui": "6d00d2aaffa6094e",
+        "path": "/brasilapi",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "dc3310a258372331",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "4c9a5368c8d10423",
+        "type": "ui-group",
+        "name": "Corretoras Result",
+        "page": "6b49f25283084ef2",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "7f119621ee8f1f51",
+        "type": "ui-group",
+        "name": "ZIP Code Result",
+        "page": "6b49f25283084ef2",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "aca003e976345670",
+        "type": "http request",
+        "z": "e739fafb62ee9410",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://brasilapi.com.br/api/cvm/corretoras/v1",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 630,
+        "y": 540,
+        "wires": [
+            [
+                "f47b92b8d1024c40"
+            ]
+        ]
+    },
+    {
+        "id": "1a2c86dde253e52a",
+        "type": "ui-button",
+        "z": "e739fafb62ee9410",
+        "group": "4c9a5368c8d10423",
+        "name": "",
+        "label": "Load Data",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 450,
+        "y": 540,
+        "wires": [
+            [
+                "aca003e976345670"
+            ]
+        ]
+    },
+    {
+        "id": "8d3f4e3bf85f0018",
+        "type": "ui-table",
+        "z": "e739fafb62ee9410",
+        "group": "4c9a5368c8d10423",
+        "name": "",
+        "label": "",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": false,
+        "showSearch": true,
+        "deselect": true,
+        "selectionType": "none",
+        "columns": [
+            {
+                "title": "",
+                "key": "dados_corretoras",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            }
+        ],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "append",
+        "className": "",
+        "x": 1250,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f47b92b8d1024c40",
+        "type": "function",
+        "z": "e739fafb62ee9410",
+        "name": "prepare data",
+        "func": "var corretoras = msg.payload;\nvar listCorretorasFormatado = [];\n\nfor (let index = 0; index < corretoras.length; index++) {\n    const element = corretoras[index];\n    if (element[\"nome_comercial\"] != \"\"){\n        listCorretorasFormatado.push({\n            dados_corretoras: `${element[\"nome_comercial\"]} - ${element[\"municipio\"]} / ${element[\"cnpj\"]}`\n            });\n    } else {\n        if (element[\"nome_social\"] != \"\") {\n            listCorretorasFormatado.push({\n                dados_corretoras: `${element[\"nome_social\"]} - ${element[\"municipio\"]} / ${element[\"cnpj\"]}`\n            });\n        }\n    }\n    \n}\n\nflow.set(\"dados\", listCorretorasFormatado);\nmsg.payload = listCorretorasFormatado;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 540,
+        "wires": [
+            [
+                "62135fd048fd13fe"
+            ]
+        ]
+    },
+    {
+        "id": "62135fd048fd13fe",
+        "type": "function",
+        "z": "e739fafb62ee9410",
+        "name": "function 2",
+        "func": "msg.payload = flow.get(\"dados\");\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 540,
+        "wires": [
+            [
+                "8d3f4e3bf85f0018"
+            ]
+        ]
+    },
+    {
+        "id": "249566c8555814ca",
+        "type": "ui-button",
+        "z": "e739fafb62ee9410",
+        "group": "4c9a5368c8d10423",
+        "name": "",
+        "label": "Delete All",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 860,
+        "y": 620,
+        "wires": [
+            [
+                "c402260744abef03"
+            ]
+        ]
+    },
+    {
+        "id": "c402260744abef03",
+        "type": "function",
+        "z": "e739fafb62ee9410",
+        "name": "function 1",
+        "func": "msg.payload = [];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 620,
+        "wires": [
+            [
+                "8d3f4e3bf85f0018"
+            ]
+        ]
+    },
+    {
+        "id": "c0a489be1e2157f1",
+        "type": "ui-form",
+        "z": "e739fafb62ee9410",
+        "name": "",
+        "group": "7f119621ee8f1f51",
+        "label": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "ZIP Code",
+                "key": "Zip Code",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "Zip Code": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "clear",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "passthru": false,
+        "dropdownOptions": [],
+        "x": 430,
+        "y": 760,
+        "wires": [
+            [
+                "412df8ca1cc0a844"
+            ]
+        ]
+    },
+    {
+        "id": "5aa06aef9ca32eee",
+        "type": "ui-text",
+        "z": "e739fafb62ee9410",
+        "group": "7f119621ee8f1f51",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Errors",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#ff0000",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1530,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "092cd398954c1ac9",
+        "type": "http request",
+        "z": "e739fafb62ee9410",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "query",
+        "url": "{{{url}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 790,
+        "y": 760,
+        "wires": [
+            [
+                "1c25cd1d8c6cb6b4"
+            ]
+        ]
+    },
+    {
+        "id": "412df8ca1cc0a844",
+        "type": "function",
+        "z": "e739fafb62ee9410",
+        "name": "prepare data",
+        "func": "var ZIP_code =  msg.payload[\"Zip Code\"]\nmsg.url = \"https://brasilapi.com.br/api/cep/v2/\" + ZIP_code.replace(/-/g, \"\");\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 760,
+        "wires": [
+            [
+                "092cd398954c1ac9"
+            ]
+        ]
+    },
+    {
+        "id": "0ca7c0aaf4e2cd5f",
+        "type": "ui-table",
+        "z": "e739fafb62ee9410",
+        "group": "7f119621ee8f1f51",
+        "name": "",
+        "label": "",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": true,
+        "showSearch": true,
+        "deselect": true,
+        "selectionType": "none",
+        "columns": [
+            {
+                "title": "",
+                "key": "dados_corretoras",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            }
+        ],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "append",
+        "className": "",
+        "x": 1290,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bbc248adcd3002d9",
+        "type": "function",
+        "z": "e739fafb62ee9410",
+        "name": "function 4",
+        "func": "msg.payload = flow.get(\"zip_code_error\");\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1320,
+        "y": 740,
+        "wires": [
+            [
+                "5aa06aef9ca32eee"
+            ]
+        ]
+    },
+    {
+        "id": "ca37daf7ef982497",
+        "type": "ui-button",
+        "z": "e739fafb62ee9410",
+        "group": "7f119621ee8f1f51",
+        "name": "",
+        "label": "Delete All",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 440,
+        "y": 840,
+        "wires": [
+            [
+                "554fe5ae2ea52350"
+            ]
+        ]
+    },
+    {
+        "id": "554fe5ae2ea52350",
+        "type": "function",
+        "z": "e739fafb62ee9410",
+        "name": "function 5",
+        "func": "msg.payload = [];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1320,
+        "y": 840,
+        "wires": [
+            [
+                "0ca7c0aaf4e2cd5f",
+                "5aa06aef9ca32eee"
+            ]
+        ]
+    },
+    {
+        "id": "d765bc8a56dd2ba6",
+        "type": "switch",
+        "z": "e739fafb62ee9410",
+        "name": "",
+        "property": "zip_code_error",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "nempty"
+            },
+            {
+                "t": "empty"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1130,
+        "y": 760,
+        "wires": [
+            [
+                "bbc248adcd3002d9"
+            ],
+            [
+                "0ca7c0aaf4e2cd5f",
+                "bbc248adcd3002d9"
+            ]
+        ]
+    },
+    {
+        "id": "1c25cd1d8c6cb6b4",
+        "type": "function",
+        "z": "e739fafb62ee9410",
+        "name": "function 3",
+        "func": "var request = msg.payload;\nflow.set(\"zip_code_error\",\"\");\nif (request[\"type\"] == \"bad_request\" || request[\"type\"] == \"not_found\" || request[\"type\"] == \"validation_error\"){\n    flow.set(\"zip_code_error\", request[\"message\"]);\n}  else{\n    flow.set(\"zip_code_result\", msg.payload);\n\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 760,
+        "wires": [
+            [
+                "d765bc8a56dd2ba6"
+            ]
+        ]
+    }
+]
