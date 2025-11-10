@@ -121,7 +121,7 @@
     {
         "id": "4c9a5368c8d10423",
         "type": "ui-group",
-        "name": "Corretoras Result",
+        "name": "Brokers Result",
         "page": "6b49f25283084ef2",
         "width": 6,
         "height": 1,
@@ -147,6 +147,18 @@
         "groupType": "default"
     },
     {
+        "id": "ece827bbbdec1fef",
+        "type": "sqlitedb",
+        "db": ":memory:",
+        "mode": "RWC"
+    },
+    {
+        "id": "b98562c02ffca290",
+        "type": "sqlitedb",
+        "db": ".//data//data.db",
+        "mode": "RWC"
+    },
+    {
         "id": "aca003e976345670",
         "type": "http request",
         "z": "e739fafb62ee9410",
@@ -162,7 +174,7 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 630,
+        "x": 1070,
         "y": 540,
         "wires": [
             [
@@ -184,7 +196,7 @@
         "tooltip": "",
         "color": "",
         "bgcolor": "",
-        "className": "",
+        "className": "background-color: green;",
         "icon": "",
         "iconPosition": "left",
         "payload": "",
@@ -201,7 +213,7 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 430,
+        "x": 850,
         "y": 540,
         "wires": [
             [
@@ -239,8 +251,8 @@
         "mobileBreakpointType": "defaults",
         "action": "append",
         "className": "",
-        "x": 1250,
-        "y": 540,
+        "x": 1670,
+        "y": 580,
         "wires": [
             []
         ]
@@ -257,7 +269,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 830,
+        "x": 1270,
         "y": 540,
         "wires": [
             [
@@ -277,7 +289,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1040,
+        "x": 1480,
         "y": 540,
         "wires": [
             [
@@ -308,7 +320,7 @@
         "topicType": "msg",
         "buttonColor": "",
         "textColor": "",
-        "iconColor": "",
+        "iconColor": "red",
         "enableClick": true,
         "enablePointerdown": false,
         "pointerdownPayload": "",
@@ -316,7 +328,7 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 860,
+        "x": 1280,
         "y": 620,
         "wires": [
             [
@@ -336,7 +348,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1020,
+        "x": 1480,
         "y": 620,
         "wires": [
             [
@@ -376,7 +388,7 @@
         "className": "",
         "passthru": false,
         "dropdownOptions": [],
-        "x": 430,
+        "x": 850,
         "y": 760,
         "wires": [
             [
@@ -404,8 +416,8 @@
         "className": "",
         "value": "payload",
         "valueType": "msg",
-        "x": 1530,
-        "y": 740,
+        "x": 1950,
+        "y": 800,
         "wires": []
     },
     {
@@ -424,7 +436,7 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 790,
+        "x": 1230,
         "y": 760,
         "wires": [
             [
@@ -444,7 +456,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 610,
+        "x": 1050,
         "y": 760,
         "wires": [
             [
@@ -482,8 +494,8 @@
         "mobileBreakpointType": "defaults",
         "action": "append",
         "className": "",
-        "x": 1290,
-        "y": 780,
+        "x": 1750,
+        "y": 800,
         "wires": [
             []
         ]
@@ -500,8 +512,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1320,
-        "y": 740,
+        "x": 1760,
+        "y": 760,
         "wires": [
             [
                 "5aa06aef9ca32eee"
@@ -531,7 +543,7 @@
         "topicType": "msg",
         "buttonColor": "",
         "textColor": "",
-        "iconColor": "",
+        "iconColor": "red",
         "enableClick": true,
         "enablePointerdown": false,
         "pointerdownPayload": "",
@@ -539,8 +551,8 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 440,
-        "y": 840,
+        "x": 1380,
+        "y": 860,
         "wires": [
             [
                 "554fe5ae2ea52350"
@@ -559,8 +571,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1320,
-        "y": 840,
+        "x": 1560,
+        "y": 860,
         "wires": [
             [
                 "0ca7c0aaf4e2cd5f",
@@ -586,7 +598,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1130,
+        "x": 1570,
         "y": 760,
         "wires": [
             [
@@ -610,7 +622,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 980,
+        "x": 1420,
         "y": 760,
         "wires": [
             [
