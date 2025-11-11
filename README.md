@@ -21,8 +21,8 @@ Before running the project, make sure you have the following installed:
 1. **Clone the repository**
 
 ```bash
-git clone <YOUR_REPOSITORY_URL>
-cd <YOUR_REPOSITORY_FOLDER>
+git clone https://github.com/FelipeFantato/Node-RED-Challange.git
+cd <REPOSITORY_FOLDER>
 ```
 
 2. **Install Node-RED globally (if not installed yet):**
